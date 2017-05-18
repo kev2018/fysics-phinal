@@ -15,9 +15,9 @@ exports.acceleration=function(vi,vf,t){
 exports.properDistance=function(vint,vfin,time){
   return (acceleration(vint,vfin,time)*t*t)/2+i*t;
 }
-exports.awesomeDistance=function(vi,vf,t){
+/*exports.awesomeDistance=function(vi,vf,t){
     return ((vf+vi)t)/2;
-}
+}*/
 eports.velocity2 =function(vi,a,t){
     return vi+a*t;
 }
