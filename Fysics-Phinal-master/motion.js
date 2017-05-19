@@ -12,15 +12,18 @@ exports.time = function(v,t){
 exports.acceleration=function(vi,vf,t){
   return (vf-vi)/t;
 };
-exports.properDistance=function(vint,vfin,time){
-  return (acceleration(vint,vfin,time)*t*t)/2+i*t;
+exports.properDistance=function(vint,vfin,t){
+  return (acceleration(vint,vfin,t)*t*t)/2+i*t;
 }
 /*exports.awesomeDistance=function(vi,vf,t){
     return ((vf+vi)t)/2;
 }*/
-eports.velocity2 =function(vi,a,t){
-    return vi+a*t;
+eports.velocity2 =function(d,a,t,){
+    return (d/t)-((at)/2);
 }
 exports.time2=function(vf,vi,a){
     return (vf-vi)/a;
+}
+exports.distance2(a,t,v){
+  ((v*t)+((a*t*t)/2);
 }

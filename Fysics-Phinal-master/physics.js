@@ -28,19 +28,31 @@ terminal.question("What type of equation are you looking for?(motion or energy)"
                 printOptions();
                 terminal.question("...",function(str)){
                     let c = convertToArray(str);
-                    if(Number.isNan())
+                    if(Number.isNan(c[2])=true){
+                      console.log(motion.distance(c[1],c[3]));
+                    }
+                    else{
+                      console.log(motion.distance2(c[2],c[3],c[1]));
+                    }
                 }
             }
             else if(str =='v'){
                 printOptions();
                 terminal.question("...",function(str)){
                     let c = convertToArray(str);
+                    if(Number.isNan(c[2])=true){
+                      console.log(motion.velocity(c[0],c[3]));
+                    }
+                    else{
+                      console.log(motion.velocity2(c[0],c[2],c[3]));
+                    }
                 }
             }
             else if(str == 'a'){
                 printOptions();
                 terminal.question("...",function(str)){
-                    let c = convertToArray(str);
+                    let c = convertToArray(str
+                      console.log(motion.acceleration());
                 }
             }
             else if(str == 't'){
