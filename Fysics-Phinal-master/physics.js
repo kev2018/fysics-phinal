@@ -26,8 +26,8 @@ terminal.question("What type of equation are you looking for?(motion or energy)"
             str.toLowerCase(str);
             if(str == 'd'){
                 printOptions();
-                terminal.question("...",function(str)){
-                    let c = convertToArray(str);
+                terminal.question("...",function(c)){
+                    convertToArray(c);
                     if(Number.isNan(c[2])=true){
                       console.log(motion.distance(c[1],c[3]));
                     }
@@ -38,8 +38,8 @@ terminal.question("What type of equation are you looking for?(motion or energy)"
             }
             else if(str =='v'){
                 printOptions();
-                terminal.question("...",function(str)){
-                    let c = convertToArray(str);
+                terminal.question("...",function(c)){
+                    convertToArray(c);
                     if(Number.isNan(c[2])=true){
                       console.log(motion.velocity(c[0],c[3]));
                     }
@@ -50,18 +50,23 @@ terminal.question("What type of equation are you looking for?(motion or energy)"
             }
             else if(str == 'a'){
                 printOptions();
-                terminal.question("...",function(str)){
-                    let c = convertToArray(str
-                      console.log(motion.acceleration());
+                terminal.question("...",function(c)){
+                    convertToArray(c);
+                      console.log(motion.acceleration(c[0],c[1],c[3]));
                 }
             }
             else if(str == 't'){
                 printOptions();
-                terminal.question("...",function(str)){
-                    let c = convertToArray(str);
+                terminal.question("...",function())c{
+                    convertToArray(c);
+                    if(Number.isNan())
+                    console.log(motion.);
                 }
             }
         }
+    }
+    else{
+      console.log('sorry your imput wasnt recognized');
     }
     if(str =='energy'){
         str.toLowerCase(str);
