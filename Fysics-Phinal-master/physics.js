@@ -19,9 +19,8 @@ function convertToArray(strcma){
   return strcma;
 }
 function end(){
-    terminal.close();
+  terminal.close();
 }
-//n,10,n,3,n,n
 
 terminal.question("What type of equation are you looking for?(motion or energy)",function(str){
   str.toLowerCase(str);
@@ -30,67 +29,90 @@ terminal.question("What type of equation are you looking for?(motion or energy)"
       str.toLowerCase(str);
       if(str == 'd'){
         printOptions();
-        terminal.question("...",function(c){
-          console.log(Number.isNaN(c[2]));
-          convertToArray(c);
+        terminal.question("...",function(str){
+          let c = convertToArray(str);
           if(Number.isNaN(c[2])==false){
-              console.log(motion.distance2(c[2],c[3],c[1]));
-              end();
+            console.log('The distance is '+motion.distance2(c[2],c[3],c[1]));
+            end();
           }
           else{
-            console.log(motion.distance(c[1],c[3]));
+            console.log('The distance is '+motion.distance(c[1],c[3]));
             end();
           }
         });
       }
       else if(str =='v'){
         printOptions();
-        terminal.question("...",function(c){
-          convertToArray(c);
-          if(Number.isNaN(c[2])=true){
-            console.log(motion.velocity(c[0],c[3]));
+        terminal.question("...",function(str){
+          let c = convertToArray(str);
+          if(Number.isNaN(c[2])==false){
+            console.log('The velocity is '+motion.velocity2(c[0],c[2],c[3]));
             end();
           }
           else{
-            console.log(motion.velocity2(c[0],c[2],c[3]));
+            console.log('The velocity is '+motion.velocity(c[0],c[3]));
+
             end();
           }
         });
       }
       else if(str == 'a'){
         printOptions();
-        terminal.question("...",function(c){
-          convertToArray(c);
-          console.log(motion.acceleration(c[0],c[1],c[3]));
+        terminal.question("...",function(str){
+          let c = convertToArray(str);
+          console.log('The acceleration is '+motion.acceleration(c[0],c[1],c[3]));
           end();
         });
       }
       else if(str == 't'){
         printOptions();
-        terminal.question("...",function(c){
-          convertToArray(c);
-          console.log(motion.time(c[0],c[1]));
+        terminal.question("...",function(str){
+          let c = convertToArray(str);
+          console.log('The time is '+motion.time(c[0],c[1]));
           end();
         });
+      }
+      else{
+        console.log('your imput wasnt recognized.');
+        end()
+      }
+    });
+  }
+  else if(str =='energy'){
+    str.toLowerCase(str);
+    terminal.question("What are you looking for?(ke,v,m)",function(str){
+      if(str == 'ke'){
+        printOptions();
+        terminal.question("...",function(str){
+          let c = convertToArray(str);
+          console.log('The kineticEnergy is '+energy.kineticEnergy(c[4],c[1]));
+          end();
+        });
+      }
+      else if(str == 'v'){
+        printOptions();
+        terminal.question("...",function(str){
+          let c = convertToArray(str);
+          console.log('The velocity is '+energy.velocity3(c[5],c[4]));
+          end();
+        });
+      }
+      else if(str == 'm'){
+        printOptions();
+        terminal.question("...",function(str){
+          let c = convertToArray(str);
+          console.log('The mass is '+energy.mass(c[5],c[1]));
+          end();
+        });
+      }
+      else{
+        console.log('your imput wasnt recognized.');
+        end()
       }
     });
   }
   else{
-    console.log('sorry your imput wasnt recognized');
-    end();
-  }
-  if(str =='energy'){
-    str.toLowerCase(str);
-    terminal.question("What are you looking for?(ke,v,m)",function(str){
-      if(str == 'ke'){
-
-      }
-      else if(str == 'v'){
-
-      }
-      else if(str == 'm'){
-
-      }
-    });
+    console.log('your imput wasnt recognized.');
+    end()
   }
 });
